@@ -1,0 +1,834 @@
+/*======================================
+            IMPORT FONTS
+======================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+/*======================================
+              RESET
+======================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    linear-gradient(180deg,#07060d,#120d1f,#1d1733,#090710);
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+}
+
+/*======================================
+           SCROLLBAR
+======================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#8b69ff;
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#120d20;
+
+}
+
+/*======================================
+             STARS
+======================================*/
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+    background-image:
+
+    radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 1px),
+
+    radial-gradient(circle,rgba(219,201,255,.8) 1px,transparent 1px),
+
+    radial-gradient(circle,rgba(255,255,255,.4) 2px,transparent 2px);
+
+    background-size:
+
+    120px 120px,
+
+    180px 180px,
+
+    260px 260px;
+
+    animation:starsMove 80s linear infinite;
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-250px);
+
+    }
+
+}
+
+/*======================================
+            PAGE LAYOUT
+======================================*/
+
+.page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+/*======================================
+             TITLES
+======================================*/
+
+h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:6rem;
+
+    letter-spacing:6px;
+
+    text-shadow:
+
+    0 0 10px white,
+
+    0 0 35px #8c6dff,
+
+    0 0 70px #7d5eff;
+
+}
+
+h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:3rem;
+
+    margin-bottom:30px;
+
+}
+
+/*======================================
+             TEXT
+======================================*/
+
+p{
+
+    max-width:750px;
+
+    line-height:2;
+
+    color:#ececec;
+
+    font-size:1.08rem;
+
+}
+
+/*======================================
+             BUTTON
+======================================*/
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:45px;
+
+    padding:16px 45px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(135deg,#8d6cff,#ba97ff);
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.4s;
+
+    box-shadow:
+
+    0 0 25px rgba(142,108,255,.45);
+
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.03);
+
+    box-shadow:
+
+    0 0 40px rgba(176,148,255,.8);
+
+}
+
+/*======================================
+             GLASS
+======================================*/
+
+.glass{
+
+    width:min(900px,95%);
+
+    background:rgba(255,255,255,.07);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:28px;
+
+    padding:55px;
+
+    box-shadow:
+
+    0 0 40px rgba(140,110,255,.15);
+
+}
+
+/*======================================
+           FADE UP
+======================================*/
+
+.fade{
+
+    animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*======================================
+          FLOATING TITLE
+======================================*/
+
+.float{
+
+    animation:floating 5s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/*======================================
+            AUDIO
+======================================*/
+
+audio{
+
+    position:fixed;
+
+    top:18px;
+
+    right:18px;
+
+    width:210px;
+
+    opacity:.85;
+
+}
+
+/*======================================
+          RESPONSIVE
+======================================*/
+
+@media(max-width:768px){
+
+h1{
+
+    font-size:4rem;
+
+}
+
+h2{
+
+    font-size:2.3rem;
+
+}
+
+p{
+
+    font-size:1rem;
+
+}
+
+.glass{
+
+    padding:35px;
+
+}
+
+audio{
+
+    width:170px;
+
+}
+
+}
+
+/*======================================
+            AURORA GLOW
+======================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    background:#8f6dff;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    top:-180px;
+    left:-180px;
+
+    opacity:.18;
+
+    animation:aurora1 18s ease-in-out infinite alternate;
+
+    z-index:-3;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    background:#ff9fe6;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    bottom:-150px;
+    right:-150px;
+
+    opacity:.12;
+
+    animation:aurora2 22s ease-in-out infinite alternate;
+
+    z-index:-3;
+
+}
+
+@keyframes aurora1{
+
+    to{
+
+        transform:
+        translate(120px,80px)
+        scale(1.2);
+
+    }
+
+}
+
+@keyframes aurora2{
+
+    to{
+
+        transform:
+        translate(-100px,-80px)
+        scale(1.15);
+
+    }
+
+}
+
+/*======================================
+            MINI TEXT
+======================================*/
+
+.mini{
+
+    color:#d8c9ff;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+    font-size:.9rem;
+
+    opacity:.9;
+
+}
+
+/*======================================
+            QUOTE
+======================================*/
+
+.quote{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    color:#ece4ff;
+
+    max-width:850px;
+
+    line-height:1.8;
+
+    margin:35px auto;
+
+    text-align:center;
+
+}
+
+/*======================================
+           GALLERY
+======================================*/
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:35px;
+
+    margin-top:45px;
+
+}
+
+/*======================================
+            PHOTO
+======================================*/
+
+.photo{
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    transition:.45s;
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.photo:hover{
+
+    transform:
+    translateY(-10px)
+    rotate(1deg);
+
+}
+
+.photo img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:5px;
+
+}
+
+.photo span{
+
+    display:block;
+
+    color:#444;
+
+    margin-top:15px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.2rem;
+
+}
+
+/*======================================
+              CARDS
+======================================*/
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:30px;
+
+    width:100%;
+
+    margin-top:40px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 0 35px rgba(170,145,255,.35);
+
+}
+
+.card h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
+}
+
+.card p{
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+}
+
+/*======================================
+            SMALL
+======================================*/
+
+.small{
+
+    color:#ccb7ff;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+    display:block;
+
+}
+
+/*======================================
+            MOBILE
+======================================*/
+
+@media(max-width:768px){
+
+.quote{
+
+    font-size:1.5rem;
+
+}
+
+.photo img{
+
+    height:240px;
+
+}
+
+.cards{
+
+    gap:20px;
+
+}
+
+}
+
+/*======================================
+            SECRET PAGE
+======================================*/
+
+.secret{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:100vh;
+
+    text-align:center;
+
+}
+
+.secret p{
+
+    margin-top:20px;
+
+    max-width:650px;
+
+}
+
+.secret .btn{
+
+    margin-top:50px;
+
+}
+
+/*======================================
+            ENDING
+======================================*/
+
+.ending{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    min-height:100vh;
+
+}
+
+.ending h1{
+
+    margin-bottom:25px;
+
+}
+
+.ending p{
+
+    max-width:800px;
+
+    line-height:2.1;
+
+    margin-top:25px;
+
+}
+
+.small{
+
+    color:#d8c8ff;
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+
+    font-size:.9rem;
+
+}
+
+/*======================================
+            FOOTER
+======================================*/
+
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#d7c9ff;
+
+    font-size:.95rem;
+
+    opacity:.8;
+
+}
+
+/*======================================
+            FADE
+======================================*/
+
+.fade-delay{
+
+    animation:fadeUp 1.6s ease;
+
+}
+
+.fade-slow{
+
+    animation:fadeUp 2.2s ease;
+
+}
+
+/*======================================
+            IMAGE EFFECT
+======================================*/
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+.photo img:hover{
+
+    filter:brightness(1.08);
+
+}
+
+/*======================================
+            BUTTON ACTIVE
+======================================*/
+
+.btn:active{
+
+    transform:scale(.96);
+
+}
+
+/*======================================
+            SELECTION
+======================================*/
+
+::selection{
+
+    background:#9b7cff;
+
+    color:white;
+
+}
+
+/*======================================
+            MOBILE
+======================================*/
+
+@media(max-width:768px){
+
+.page{
+
+    padding:25px;
+
+}
+
+.gallery{
+
+    grid-template-columns:1fr;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+footer{
+
+    font-size:.85rem;
+
+}
+
+}
